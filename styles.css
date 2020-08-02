@@ -137,6 +137,7 @@ footer {
 
 .container img {
     width: 290px;
+    height: auto;
     display: inline-block;
 }
 
