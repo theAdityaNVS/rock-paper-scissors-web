@@ -10,6 +10,16 @@ let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
 let choices = ["rock", "paper", "scissors"];
 
+// Player Choice Functions 
+rock.onclick = function(){
+    gameMaster(choices[0]);
+};
+paper.onclick = function(){
+    gameMaster(choices[1]);
+};
+scissors.onclick = function(){
+    gameMaster(choices[2]);
+};
 
 // Make Computer's Choice
 function computerChoice(){
@@ -40,7 +50,6 @@ function compareChoices(player, computer){
 }
 
 // Score Keeper and Updater on Display Board
-
 function win(userChoice, computerChoice){
     userScore++;
     userScoreDisplay.innerHTML = userScore;
@@ -66,20 +75,3 @@ function draw(userChoice, computerChoice){
     resultBoard.innerHTML = userChoice + " equals " + computerChoice + " ? its a DRAW !";
     resultBoard.style.textTransform = "capitalize";
 }
-
-
-
-function main(){
-    // Player Choice Functions 
-    rock.onclick = function(){
-        gameMaster(choices[0]);
-    };
-    paper.onclick = function(){
-        gameMaster(choices[1]);
-    };
-    scissors.onclick = function(){
-        gameMaster(choices[2]);
-    };
-}
-
-main();
