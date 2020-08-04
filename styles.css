@@ -4,6 +4,17 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: default;
+}
+
+.no-select {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 html {
@@ -95,11 +106,12 @@ img {
 }
 
 .choice:hover {
-    box-shadow: 0 0 10px #EAE151;
+    box-shadow: 0 0 10px #EAE151, 0 0 10px #000;
 }
 
 .choice:hover h2 {
     font-weight: 700;
+    cursor: pointer;
 }
 
 .choice img:hover {
@@ -153,4 +165,9 @@ footer {
     width: 200px;
     height: auto;
     margin: 8px;
+    cursor: pointer;
+}
+
+.github-link img:hover {
+    box-shadow: 0 0 8px #98CA2B, 0 0 10px #000;
 }
