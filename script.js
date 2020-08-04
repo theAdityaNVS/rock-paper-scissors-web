@@ -4,7 +4,7 @@ let computerScore = 0;
 let userScoreDisplay = document.getElementById("user-score");
 let computerScoreDisplay = document.getElementById("computer-score");
 let scoreBoard = document.getElementsByClassName("scoreDisplay");
-let resultBoard = document.getElementsByClassName("result");
+let resultBoard = document.querySelector(".result > p");
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
@@ -27,38 +27,44 @@ function gameMaster(userChoice) {
 // Compare the Choices Made
 function compareChoices(player, computer){
     switch(player + computer){
-        case "rockscissors": win(); break;
-        case "scissorspaper": win(); break;
-        case "paperrock": win(); break;
-        case "scissorsrock": lose(); break;
-        case "paperscissors": lose(); break;
-        case "rockpaper": lose(); break;
-        case "rockrock": draw(); break;
-        case "scissorsscissors": draw(); break;
-        case "paperpaper": draw(); break;
+        case "rockscissors": win(player, computer); break;
+        case "scissorspaper": win(player, computer); break;
+        case "paperrock": win(player, computer); break;
+        case "scissorsrock": lose(player, computer); break;
+        case "paperscissors": lose(player, computer); break;
+        case "rockpaper": lose(player, computer); break;
+        case "rockrock": draw(player, computer); break;
+        case "scissorsscissors": draw(player, computer); break;
+        case "paperpaper": draw(player, computer); break;
     }
 }
 
 // Score Keeper and Updater on Display Board
 
-function win(){
+function win(userChoice, computerChoice){
     userScore++;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
+    resultBoard.innerHTML = userChoice + " beats " + computerChoice + " . you WIN !";
+    resultBoard.style.textTransform = "capitalize";
 }
 
-function lose(){
+function lose(userChoice, computerChoice){
     computerScore++;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
+    resultBoard.innerHTML = computerChoice + " beats " + userChoice + " . you LOSE !";
+    resultBoard.style.textTransform = "capitalize";
 }
 
 
-function draw(){
+function draw(userChoice, computerChoice){
     userScore++;
     computerScore++;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
+    resultBoard.innerHTML = userChoice + " equals " + computerChoice + " ? its a DRAW !";
+    resultBoard.style.textTransform = "capitalize";
 }
 
 
