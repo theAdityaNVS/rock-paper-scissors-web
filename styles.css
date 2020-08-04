@@ -148,3 +148,9 @@ footer {
     font-size: 15px;
     color: #6a6a6a;
 }
+
+.github-link img {
+    width: 200px;
+    height: auto;
+    margin: 8px;
+}
