@@ -24,6 +24,42 @@ function gameMaster(userChoice) {
     compareChoices(player, computer);
 }
 
+// Compare the Choices Made
+function compareChoices(player, computer){
+    switch(player + computer){
+        case "rockscissors": win(); break;
+        case "scissorspaper": win(); break;
+        case "paperrock": win(); break;
+        case "scissorsrock": lose(); break;
+        case "paperscissors": lose(); break;
+        case "rockpaper": lose(); break;
+        case "rockrock": draw(); break;
+        case "scissorsscissors": draw(); break;
+        case "paperpaper": draw(); break;
+    }
+}
+
+// Score Keeper and Updater on Display Board
+
+function win(){
+    userScore++;
+    userScoreDisplay.innerHTML = userScore;
+    computerScoreDisplay.innerHTML = computerScore;
+}
+
+function lose(){
+    computerScore++;
+    userScoreDisplay.innerHTML = userScore;
+    computerScoreDisplay.innerHTML = computerScore;
+}
+
+
+function draw(){
+    userScore++;
+    computerScore++;
+    userScoreDisplay.innerHTML = userScore;
+    computerScoreDisplay.innerHTML = computerScore;
+}
 
 
 
