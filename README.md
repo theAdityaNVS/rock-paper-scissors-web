@@ -14,4 +14,4 @@ Simple and Minimalistic Version of Everyones Favorite RPS Game and its a Respons
 <img src="./images/RPSDef.png" width="600px" alt="default view">
 
 ### In Mobile 
-<img src="./images/RPSMob.png" height="400px" alt="Mobile view">
+<img src="./images/RPSMob.png" height="1000px" alt="Mobile view">
