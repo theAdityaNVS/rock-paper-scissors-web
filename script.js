@@ -10,6 +10,10 @@ let paper = document.getElementById("paper");
 let scissors = document.getElementById("scissors");
 let choices = ["rock", "paper", "scissors"];
 
+// UI Variables
+let userWord = "user".fontsize(3).sup();
+let compWord = "comp".fontsize(3).sup();
+
 // Player Choice Functions 
 rock.onclick = function(){
     gameMaster(choices[0]);
@@ -54,7 +58,7 @@ function win(userChoice, computerChoice){
     userScore++;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
-    resultBoard.innerHTML = userChoice + " beats " + computerChoice + " . you WIN !";
+    resultBoard.innerHTML = userChoice + userWord + " beats " + computerChoice + compWord + ". you WIN !";
     resultBoard.style.textTransform = "capitalize";
 }
 
@@ -62,16 +66,12 @@ function lose(userChoice, computerChoice){
     computerScore++;
     userScoreDisplay.innerHTML = userScore;
     computerScoreDisplay.innerHTML = computerScore;
-    resultBoard.innerHTML = computerChoice + " beats " + userChoice + " . you LOSE !";
+    resultBoard.innerHTML = computerChoice + compWord + " beats " + userChoice + userWord + ". you LOSE !";
     resultBoard.style.textTransform = "capitalize";
 }
 
 
 function draw(userChoice, computerChoice){
-    userScore++;
-    computerScore++;
-    userScoreDisplay.innerHTML = userScore;
-    computerScoreDisplay.innerHTML = computerScore;
-    resultBoard.innerHTML = userChoice + " equals " + computerChoice + " ? its a DRAW !";
+    resultBoard.innerHTML = userChoice + userWord + " equals " + computerChoice + compWord + "? its a DRAW !";
     resultBoard.style.textTransform = "capitalize";
 }
